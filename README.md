@@ -1,2 +1,84 @@
 # TRENDY
-code files for TRENDY method
+
+code files for TRENDY method, used for inferring gene regulatory networks (GRN) from single-cell gene expression data
+
+TRENDY algorithm itself uses the following packages: numpy=1.24.3, scipy=1.13.1, sklearn=1.4.2, torch=2.2.2, 
+
+other algorithms and comparison files need extra packages: pingouin=0.5.3, pandas=2.2.2, xgboost=2.0.3
+
+warning: the NonlinearODEs algorithm (xgbgrn.py) runs well on Windows, but might crash on MacOS
+
+
+major code files:
+
+TRENDY_tutorial.py: a tutorial for using TRENDY method. to apply the TRENDY method, it also needs the following files: models.py, wendy_solver.py in previous_methods folder, trendy_1.pth and trendy_2.pth in weights folder
+
+models.py: contains all three versions of the TE(k) model
+
+train_trendy_first_half.py: train the TE(k=1) model for the first half of TRENDY method. the trained weights trendy_1.pth is in the folder weights
+
+train_trendy_second_half.py: train the TE(k=3) model for the second half of TRENDY method. the trained weights trendy_2.pth is in the folder weights
+
+
+
+code files for training other models:
+
+train_GENIE3_rev.py: train the GENIE3_rev method. the trained weights genie_rev.pth is in the folder weights
+
+train_NonlinearODEs_rev.py: train the NonlinearODEs_rev method. the trained weights nlode_rev.pth is in the folder weights
+
+train_SINCERITIES_rev.py: train the SINCERITIES_rev method. the trained weights sinc_rev.pth is in the folder weights
+
+
+
+code files for comparing different methods:
+
+test_SINC.py: used to compare different methods on SINC data
+
+test_DREAM4.py: used to compare different methods on DREAM4 data
+
+test_THP1.py: used to compare different methods on THP-1 data
+
+test_hESC.py: used to compare different methods on hESC data
+
+
+
+code for previously known methods, all in the folder previous_methods:
+
+sincerities.py: code for SINCERITIES method
+
+xgbgrn.py: code for NonlinearODEs method
+
+GENIE3.py: code for GENIE3 method
+
+wendy_solver.py: code for WENDY method
+
+
+
+auxiliary code files:
+
+methods.py: contains functions for different methods
+
+evaluation.py: compare the inferred GRN with the ground truth GRN and calculate AUROC and AUPRC
+
+plots.py: draw plots
+
+
+generate training data, all in the folder Data_generation: 
+
+A_data_generation.py generates a random GRN, generate.py generates all files in the following folder total_data_10, the other four files are previously known methods
+
+
+data sets:
+
+folder total_data_10 (https://drive.google.com/drive/folders/1WM_C3lSpgF_cwTv-6wWtiOEgqOGXK6T0?usp=sharing): saves the generated data for training and validation, along with the SINC test data set. for different endings: A is the ground truth GRN, cov is the covariance matrix, data is the original data, genie is the inferred GRN by GENIE3, nlode is the inferred GRN by NonlinearODEs, revcov is the Ktstar matrix, sinc is the inferred GRN by SINCERITIES, wendy is the inferred GRN by WENDY. there should be 100 dataset_xx_total_xxx.npy files for training but we only upload one. use the files in folder Data_generation to generate the other 99 groups of training data
+
+folder rev_wendy_all_10 (https://drive.google.com/drive/folders/184v_Sermeqqy4oQSs9uYA1BDf3mhKbSC?usp=sharing): saves the inferred A_1 matrix in TRENDY. there should be 100 dataset_xx_total_revwendy.npy files but we only upload one
+
+folder DREAM4: GRNs and corresponding expression data from https://www.synapse.org/#!Synapse:syn3049712/wiki/74628, has 10 numpy matrices (GRNs) DREAM4_A....npy and 10 numpy matrices (expression data) DREAM4_data....npy
+
+example_data_0.npy, example_data_1.npy: two example data sets, used for TRENDY_tutorial.py
+
+folder THP1: GRN (THP1_A.npy) and corresponding expression data (THP1_data.npy) from https://link.springer.com/article/10.1186/gb-2013-14-10-r118
+
+folder hESC: GRN (hESC_A.npy) and corresponding expression data (hESC_data....npy for six time points) from https://link.springer.com/article/10.1186/s13059-016-1033-x
