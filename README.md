@@ -8,6 +8,8 @@ other algorithms and comparison files need extra packages: pingouin=0.5.3, panda
 
 warning: the NonlinearODEs algorithm (xgbgrn.py) runs well on Windows, but might crash on MacOS
 
+manuscript for TRENDY method: GRN_transformer.pdf
+
 
 major code files:
 
