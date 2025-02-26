@@ -82,7 +82,7 @@ folder total_data_10 (https://zenodo.org/records/13929908, not uploaded here): s
 
 folder rev_wendy_all_10 (not uploaded here. see https://zenodo.org/records/13929908): saves the inferred Kt' matrix (xxx_ktstar files) and A_1 matrix (xxx_revwendy files) in TRENDY
 
-folder SINC: ground truth GRNs and inferred GRNs in SINC data set. _A is ground truth GRN; _cov is covariance matrix; _genie is the inferred GRN by GENIE3; _nlode is the inferred GRN by NonlinearODEs; _revwendy is the inferred GRN by the first half of TRENDY; _sinc is the inferred GRN by SINCERITIES; _wendy is the inferred GRN by WENDY. sigma001/010/100 means different values of the parameter sigma for generating the data
+folder SINC: ground truth GRNs and inferred GRNs in SINC data set. _A is ground truth GRN; _cov is covariance matrix; _genie is the inferred GRN by GENIE3; _nlode is the inferred GRN by NonlinearODEs; _revwendy is the inferred GRN by the first half of TRENDY; _sinc is the inferred GRN by SINCERITIES; _wendy is the inferred GRN by WENDY. sigma001/010/100 means different values of the parameter sigma for generating the data. See https://zenodo.org/records/14927741 for the original data with name _data
 
 folder DREAM4: GRNs and corresponding expression data from https://www.synapse.org/#!Synapse:syn3049712/wiki/74628, has 10 numpy matrices (GRNs) DREAM4_A....npy and 10 numpy matrices (expression data) DREAM4_data....npy
 
