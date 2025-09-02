@@ -43,6 +43,8 @@ test_THP1_new.py: used to compare different methods on THP-1 data
 
 test_hESC_new.py: used to compare different methods on hESC data
 
+test_mESC_new.py: used to compare different methods on mESC data
+
 
 
 code for previously known methods, all in the folder previous_methods:
@@ -91,3 +93,5 @@ example_data_0.npy, example_data_1.npy: two example data sets, used for TRENDY_t
 folder THP1: GRN (THP1_A.npy) and corresponding expression data (THP1_data.npy) from https://link.springer.com/article/10.1186/gb-2013-14-10-r118
 
 folder hESC: GRN (hESC_A.npy) and corresponding expression data (hESC_data....npy for six time points) from https://link.springer.com/article/10.1186/s13059-016-1033-x
+
+folder mESC: GRN (hESC_A.npy) and corresponding expression data (hESC_data....npy for six time points) from https://www.nature.com/articles/s41467-018-02866-0
